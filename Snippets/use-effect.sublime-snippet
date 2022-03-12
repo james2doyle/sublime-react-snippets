@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+useEffect(${1:didUpdate}, [${2:dependencies}]);$0
+]]></content>
+  <description>React useEffect</description>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>use-effect</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.jsx, source.tsx</scope>
+</snippet>

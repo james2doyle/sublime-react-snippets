@@ -1,0 +1,10 @@
+<snippet>
+  <content><![CDATA[
+const [${1:count}, set${1/(\w+)\W*/\u\1\E/g}] = useState(${2:initialState});$0
+]]></content>
+  <description>React useState</description>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>use-state</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.jsx, source.tsx</scope>
+</snippet>
