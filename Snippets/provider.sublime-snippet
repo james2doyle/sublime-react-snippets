@@ -1,0 +1,68 @@
+<snippet>
+  <content><![CDATA[
+import React, { useState } from 'react';
+
+// alternative state management choices
+/** @see https://github.com/streamich/react-use/blob/master/docs/useSetState.md */
+// import { useSetState } from 'react-use';
+/** @see https://github.com/streamich/react-use/blob/master/docs/useMap.md */
+// import { useMap } from 'react-use';
+/** @see https://github.com/streamich/react-use/blob/master/docs/useSet.md */
+// import { useSet } from 'react-use';
+
+import { ${1/(\w+)\W*/\u\1\E/g} as ${1/(\w+)\W*/\u\1\E/g}Type } from '@types';
+
+type ${1/(\w+)\W*/\u\1\E/g}ContextType = {
+  ${1:name}: ${1/(\w+)\W*/\u\1\E/g}Type;
+  set${1/(\w+)\W*/\u\1\E/g}: React.Dispatch<React.SetStateAction<${1/(\w+)\W*/\u\1\E/g}Type>>;
+};
+
+const DEFAULT_STATE = {
+  /** @todo put default state in here */
+};
+
+const ${1/(\w+)\W*/\u\1\E/g}CreatedContext = React.createContext<${1/(\w+)\W*/\u\1\E/g}ContextType>({
+  ${1:name}: DEFAULT_STATE,
+  set${1/(\w+)\W*/\u\1\E/g}: () => DEFAULT_STATE,
+});
+
+const ${1/(\w+)\W*/\u\1\E/g}Context = (): ${1/(\w+)\W*/\u\1\E/g}ContextType => {
+  const context = React.useContext(${1/(\w+)\W*/\u\1\E/g}CreatedContext);
+
+  if (!context) {
+    throw new Error('properties must be used within ${1/(\w+)\W*/\u\1\E/g}Provider');
+  }
+
+  return context;
+};
+
+const use${1/(\w+)\W*/\u\1\E/g} = () => useState<${1/(\w+)\W*/\u\1\E/g}Type>(DEFAULT_STATE);
+
+export const ${1/(\w+)\W*/\u\1\E/g}Provider: React.FC = ({ children }) => {
+  const [${1:name}, set${1/(\w+)\W*/\u\1\E/g}] = use${1/(\w+)\W*/\u\1\E/g}();
+
+  // alternative state management choices
+  // const [${1:name}, set${1/(\w+)\W*/\u\1\E/g}] = useSetState(DEFAULT_STATE);
+  // const [set, { add, has, remove, toggle, reset }] = useSet(new Set([DEFAULT_STATE]));
+  // const [map, {set, setAll, remove, reset}] = useMap(DEFAULT_STATE);
+
+  const value = {
+    ${1:name},
+    set${1/(\w+)\W*/\u\1\E/g},
+  };
+
+  return (
+    <${1/(\w+)\W*/\u\1\E/g}CreatedContext.Provider value={value}>
+      {children}
+    </${1/(\w+)\W*/\u\1\E/g}CreatedContext.Provider>
+  );
+};
+
+export default ${1/(\w+)\W*/\u\1\E/g}Context;
+]]></content>
+  <description>React create provider</description>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>Provider</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.jsx, source.tsx</scope>
+</snippet>
