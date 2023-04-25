@@ -9,6 +9,7 @@ A few snippets for React hooks
 * `useRef`
 * `useState`
 * Create provider
+* Create component
 
 ### Installation
 
