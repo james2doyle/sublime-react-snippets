@@ -1,0 +1,14 @@
+<snippet>
+  <content><![CDATA[
+useEffect(() => {
+  window.addEventListener('${1:eventName}', ${2:eventCallback});
+  return () => window.removeEventListener('${1:eventName}', ${2:eventCallback});
+  ${3:// eslint-disable-next-line react-hooks/exhaustive-deps}
+}${4:, []});$0
+]]></content>
+  <description>React useWindowEffect</description>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>use-window-effect</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.jsx, source.tsx</scope>
+</snippet>
