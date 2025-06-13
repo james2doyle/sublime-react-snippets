@@ -1,0 +1,25 @@
+<snippet>
+  <content><![CDATA[
+import React from 'react';
+
+export interface ${1/(\w+)\W*/\u\1\E/g}Props {
+  label: string;
+};
+
+const ${1/(\w+)\W*/\u\1\E/g}: React.FC<${1/(\w+)\W*/\u\1\E/g}Props & React.HTMLAttributes<HTMLDivElement>> = ({ label, children, ...rest }) => {
+  return (
+    <div {...rest}>
+      <div>{label}</div>
+      <div>{children}</div>
+    </div>
+  );
+};
+
+export default ${1/(\w+)\W*/\u\1\E/g};
+]]></content>
+  <description>React create component that has an interface and export</description>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>Ecomponent</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.jsx, source.tsx</scope>
+</snippet>

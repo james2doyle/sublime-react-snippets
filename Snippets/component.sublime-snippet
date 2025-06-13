@@ -1,15 +1,6 @@
 <snippet>
   <content><![CDATA[
-import React from 'react';
-
-export interface ${1/(\w+)\W*/\u\1\E/g}Props {
-  label: string;
-};
-
-const ${1/(\w+)\W*/\u\1\E/g}: React.FC<
-  ${1/(\w+)\W*/\u\1\E/g}Props &
-  React.HTMLAttributes<HTMLDivElement>
-> = ({ label, children, ...rest }) => {
+const ${1/(\w+)\W*/\u\1\E/g}: React.FC<${2:${1/(\w+)\W*/\u\1\E/g}Props & }React.HTMLAttributes<HTMLDivElement>> = ({ label, children, ...rest }) => {
   return (
     <div {...rest}>
       <div>{label}</div>
@@ -17,8 +8,6 @@ const ${1/(\w+)\W*/\u\1\E/g}: React.FC<
     </div>
   );
 };
-
-export default ${1/(\w+)\W*/\u\1\E/g};
 ]]></content>
   <description>React create component</description>
   <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
